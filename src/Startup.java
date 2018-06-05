@@ -17,7 +17,7 @@ public class Startup {
 	static List<String> pathList;
 	static List<String> programList;
 	static String[] serverStatesIC = {"Integration Server - starting", "CTP Server - waiting for IS to be up"};
-	
+	//hi there
 	public static void main(String[] args){
         
         //Obtaining a reference to the console.
