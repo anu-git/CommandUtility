@@ -9,8 +9,11 @@ public class ListKeywordCommand extends KeywordCommand{
 	}
 	@Override
 	public boolean execute() {
-		// TODO Auto-generated method stub
-		return false;
+		String[] entries = configFile.listEntries();
+		for(String entry : entries){
+			output.printOutput(entry);
+		}
+		return true;
 	}
 
 }

@@ -10,7 +10,7 @@ public class ConsoleOutput implements Output{
 	}
 	@Override
 	public void printOutput(String msg) {
-		con.printf(msg);
+		con.printf(msg+"\n");
 		
 	}
 

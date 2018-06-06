@@ -9,8 +9,13 @@ public class UpdateKeywordCommand extends KeywordCommand{
 	}
 	@Override
 	public boolean execute() {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isUpdated = configFile.updateEntry(param[0], param[1]);
+		if(isUpdated){
+			output.printOutput("Key is updated successfully");
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

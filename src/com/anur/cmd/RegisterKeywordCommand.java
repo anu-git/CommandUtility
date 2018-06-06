@@ -8,8 +8,15 @@ public class RegisterKeywordCommand extends KeywordCommand{
 		super.param = param;
 	}
 	@Override
-	public boolean execute() {		
-		return configFile.addEntry(param[0], param[1]);
+	public boolean execute() {
+		boolean isAdded = configFile.addEntry(param[0], param[1]);
+		if(isAdded){
+			output.printOutput("Key is registered successfully");
+			return true;
+		}else{
+			return false;
+		}
+		
 	}
 
 }

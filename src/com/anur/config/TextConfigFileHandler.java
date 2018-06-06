@@ -15,7 +15,7 @@ public class TextConfigFileHandler extends ConfigFileHandler {
 		try (FileInputStream fis = new FileInputStream(new File(configFilePath))){
 			props.load(fis);			
 		} catch (IOException e) {
-			e.printStackTrace();
+			output.printOutput("Error while reading config file "+e.getMessage());
 			return false;
 		}
 		
@@ -30,8 +30,7 @@ public class TextConfigFileHandler extends ConfigFileHandler {
 				props.store(fos, "Entry Added/Updated/Deleted");
 				
 			} catch (IOException e) {
-				e.printStackTrace();
-				//log message to logger or console
+				output.printOutput("Error while updating config file "+e.getMessage());
 				return false;				
 			}
 		return true;

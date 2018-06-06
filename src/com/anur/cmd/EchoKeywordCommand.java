@@ -11,6 +11,7 @@ public class EchoKeywordCommand extends KeywordCommand{
 	@Override
 	public boolean execute() {
 		String value = configFile.echoEntry(param[0]);
+		output.printOutput(value);
 		return (value != null && !value.equalsIgnoreCase(""))?true:false;
 	}
 
