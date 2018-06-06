@@ -1,22 +1,69 @@
 package com.anur.config;
 
 import java.util.Map;
+import java.util.Properties;
 
 public abstract class ConfigFileHandler {
 	protected String configFilePath;
-	protected Map<String, String> keywordMap;
+	protected Properties props = new Properties();
 		
-	abstract Map<String, String> loadEntries();
+	abstract boolean loadEntries();
 	
-	abstract boolean listEntries();
+	abstract boolean storeEntries(Properties props);
 	
-	abstract boolean addEntry(String key, String value);
+	public String[] listEntries(){
+		return props.keySet().toArray(new String[0]);
+	}
 	
-	abstract boolean updateEntry(String key, String newValue);
+	public boolean addEntry(String key, String value){
+		if(echoEntry(key) != null){
+			//log message to logger or console
+			return false;
+		}
+		props.put(key, value);
+		boolean isStored = storeEntries(props);
+		if(isStored){
+			return true;
+		}else{
+			props.remove(key);
+			return false;
+		}
+
+	}
 	
-	abstract boolean deleteEntry(String key);
+	public boolean updateEntry(String key, String newValue){		
+		if(echoEntry(key) == null){
+			//log message to logger or console
+			return false;
+		}
+		String oldValue = (String) props.get(key);
+		props.put(key, newValue);
+		boolean isStored = storeEntries(props);
+		if(isStored){
+			return true;
+		}else{
+			props.put(key, oldValue);
+			return false;
+		}
+	}
 	
-	String echoEntry(String key) {
-		return keywordMap.get(key);
+	public boolean deleteEntry(String key){
+		if(echoEntry(key) == null){
+			//log message to logger or console
+			return false;
+		}
+		String value = (String) props.get(key);
+		props.remove(key);
+		boolean isStored = storeEntries(props);
+		if(isStored){
+			return true;
+		}else{
+			props.put(key, value);
+			return false;
+		}
+	}
+	
+	public String echoEntry(String key) {
+		return (String) props.get(key);
 	}
 }
