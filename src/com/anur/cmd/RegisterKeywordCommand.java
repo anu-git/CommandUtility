@@ -18,5 +18,12 @@ public class RegisterKeywordCommand extends KeywordCommand{
 		}
 		
 	}
+	@Override
+	public boolean validate() {
+		if(param.length == 2)
+			return true;
+		output.printOutput("Invalid Parameters");
+		return false;
+	}
 
 }

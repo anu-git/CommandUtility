@@ -17,5 +17,12 @@ public class UpdateKeywordCommand extends KeywordCommand{
 			return false;
 		}
 	}
+	@Override
+	public boolean validate() {
+		if(param.length == 1)
+			return true;
+		output.printOutput("Invalid Parameters");
+		return false;
+	}
 
 }

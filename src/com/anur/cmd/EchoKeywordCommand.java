@@ -14,5 +14,12 @@ public class EchoKeywordCommand extends KeywordCommand{
 		output.printOutput(value);
 		return (value != null && !value.equalsIgnoreCase(""))?true:false;
 	}
+	@Override
+	public boolean validate() {
+		if(param.length == 1)
+			return true;
+		output.printOutput("Invalid Parameters");
+		return false;
+	}
 
 }

@@ -17,5 +17,14 @@ public abstract class KeywordCommand {
 		output = o;
 	}
 	
+	public abstract boolean validate();
 	public abstract boolean execute();
+	
+	public boolean validateAndExecute() {
+		if(validate() && execute()) 
+			return true;
+		
+		return false;
+			
+	}
 }
