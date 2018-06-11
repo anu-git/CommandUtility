@@ -6,7 +6,7 @@ import java.util.Properties;
 import com.anur.output.Output;
 
 public abstract class ConfigFileHandler {
-	protected Output output;
+	protected static Output output;
 	protected String configFilePath;
 	protected Properties props = new Properties();
 		
@@ -14,7 +14,7 @@ public abstract class ConfigFileHandler {
 	
 	abstract boolean storeEntries(Properties props);
 	
-	public void setOutput(Output o){
+	public static void setOutput(Output o){
 		output = o;
 	}
 	

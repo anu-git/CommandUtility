@@ -1,6 +1,6 @@
-package com.anur.cmd;
+package com.anur.cmd.program;
 
-import com.anur.cmd.*;
+import com.anur.cmd.keyword.*;
 public class StartISCommand extends ProgramKeywordCommand {
 		
 	public StartISCommand(String[] param){

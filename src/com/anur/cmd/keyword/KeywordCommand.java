@@ -1,4 +1,4 @@
-package com.anur.cmd;
+package com.anur.cmd.keyword;
 
 import com.anur.config.ConfigFileHandler;
 import com.anur.output.Output;

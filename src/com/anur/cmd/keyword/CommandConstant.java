@@ -1,4 +1,4 @@
-package com.anur.cmd;
+package com.anur.cmd.keyword;
 
 public interface CommandConstant {
 	String REGISTER_KEYWORD_CMD = "register";

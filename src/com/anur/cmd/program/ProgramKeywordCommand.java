@@ -1,5 +1,6 @@
-package com.anur.cmd;
+package com.anur.cmd.program;
 
+import com.anur.cmd.keyword.KeywordCommand;
 import com.anur.config.ProgramHandler;
 
 public abstract class ProgramKeywordCommand extends KeywordCommand{

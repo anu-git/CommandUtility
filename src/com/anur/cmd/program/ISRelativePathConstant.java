@@ -1,4 +1,4 @@
-package com.anur.cmd;
+package com.anur.cmd.program;
 
 public interface ISRelativePathConstant {
 	String ISProfileBinPath1 = "\\profiles\\IS_default\\bin\\";

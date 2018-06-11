@@ -1,6 +1,6 @@
-package com.anur.cmd;
+package com.anur.cmd.keyword;
 
-import com.anur.cmd.CommandConstant;;
+import com.anur.cmd.keyword.CommandConstant;;
 public class RegisterKeywordCommand extends KeywordCommand{
 	public RegisterKeywordCommand(String[] param){
 		super();

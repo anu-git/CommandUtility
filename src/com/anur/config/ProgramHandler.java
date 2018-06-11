@@ -5,9 +5,9 @@ import java.io.File;
 import com.anur.output.Output;
 
 public abstract class ProgramHandler {
-	protected Output output;
+	protected static Output output;
 	
-	public void setOutput(Output o){
+	public static void setOutput(Output o){
 		output = o;
 	}
 	public boolean validatePath(String path) {
