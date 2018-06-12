@@ -16,8 +16,9 @@ public class CustomProgramCommand extends ProgramKeywordCommand {
 	public boolean validate() {
 		String pathOrFile = configFile.echoEntry(cmdName);
 		File f = new File(pathOrFile);
-		if(!f.isDirectory() && param != null){
-			return false;
+		if(!f.isDirectory()){
+			if(param != null || f.getName().indexOf(".exe") == -1)
+				return false;
 		}
 		
 		if(f.isDirectory() && param != null && param.length > 1){
@@ -35,7 +36,7 @@ public class CustomProgramCommand extends ProgramKeywordCommand {
 		}
 		
 		if(f.isDirectory() && param != null && param.length == 0){
-			return programHandler.run("explorer "+pathOrFile);
+			return programHandler.runProgram("explorer", pathOrFile);
 		}
 		
 		if(f.isDirectory() && param != null && param.length == 1){
@@ -43,13 +44,18 @@ public class CustomProgramCommand extends ProgramKeywordCommand {
 			for(String dir: list){
 				if(dir.toLowerCase().indexOf(param[0].toLowerCase()) != -1){
 					if(new File(pathOrFile+"\\"+dir).isDirectory())
-						return programHandler.run("explorer "+pathOrFile+"\\"+dir);
+						return programHandler.runProgram("explorer", pathOrFile+"\\"+dir);
 				}
 			}
 		}	
 		
 		return false;
 		
+	}
+
+	@Override
+	public void usage() {
+		output.printOutput("* <Path/Program keyword> - open program/path");
 	}
 
 }

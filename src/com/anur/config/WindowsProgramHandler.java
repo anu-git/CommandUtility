@@ -5,7 +5,7 @@ import java.io.IOException;
 public class WindowsProgramHandler extends ProgramHandler {
 
 	@Override
-	protected boolean runProgram(String path, String param) {
+	public boolean runProgram(String path, String param) {
 		Runtime runTime = Runtime.getRuntime();
 		try {
 			Process p = runTime.exec(path+ ((param!=null)?(" "+param):""));

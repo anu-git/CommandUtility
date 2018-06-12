@@ -40,4 +40,9 @@ public class StartISCommand extends ProgramKeywordCommand {
 		return false;
 	}
 
+	@Override
+	public void usage() {
+		output.printOutput("* start <IS Keyword>");
+	}
+
 }

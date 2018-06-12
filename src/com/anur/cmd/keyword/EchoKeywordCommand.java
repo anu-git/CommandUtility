@@ -21,5 +21,9 @@ public class EchoKeywordCommand extends KeywordCommand{
 		output.printOutput("Invalid Parameters");
 		return false;
 	}
+	@Override
+	public void usage() {
+		output.printOutput("* echo <keyword> - to get path");		
+	}
 
 }

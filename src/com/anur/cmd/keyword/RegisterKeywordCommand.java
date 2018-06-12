@@ -25,5 +25,8 @@ public class RegisterKeywordCommand extends KeywordCommand{
 		output.printOutput("Invalid Parameters");
 		return false;
 	}
+	@Override
+	public void usage() {
+		output.printOutput("* register <IS/Program/Path Keyword> <Folder Path/exe path>");	}
 
 }

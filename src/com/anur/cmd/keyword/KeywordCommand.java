@@ -19,6 +19,7 @@ public abstract class KeywordCommand {
 	
 	public abstract boolean validate();
 	public abstract boolean execute();
+	public abstract void usage();
 	
 	public boolean validateAndExecute() {
 		if(validate() && execute()) 

@@ -24,5 +24,9 @@ public class UpdateKeywordCommand extends KeywordCommand{
 		output.printOutput("Invalid Parameters");
 		return false;
 	}
+	@Override
+	public void usage() {
+		output.printOutput("* update <old keyword> <new keyword>");
+	}
 
 }

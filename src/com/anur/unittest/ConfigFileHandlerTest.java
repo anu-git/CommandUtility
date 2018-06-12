@@ -14,7 +14,7 @@ import com.anur.output.SystemOutput;
 
 public class ConfigFileHandlerTest {
 	
-	String sampleFile = "C:\\Users\\anur\\Desktop\\testing.properties";
+	String sampleFile = "C:\\Users\\anurag\\Desktop\\testing.properties";
 		
 	ConfigFileHandler handler  = null;
 	

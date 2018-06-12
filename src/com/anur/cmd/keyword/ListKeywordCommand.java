@@ -22,5 +22,10 @@ public class ListKeywordCommand extends KeywordCommand{
 		output.printOutput("No Parameters are required");
 		return false;
 	}
+	@Override
+	public void usage() {
+		output.printOutput("* list - to list all registered IS/Path/Programs");
+		
+	}
 
 }
