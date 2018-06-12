@@ -5,10 +5,10 @@ import java.io.IOException;
 public class WindowsProgramHandler extends ProgramHandler {
 
 	@Override
-	public boolean runProgram(String path, String param) {
+	protected boolean runProgram(String path, String param) {
 		Runtime runTime = Runtime.getRuntime();
 		try {
-			runTime.exec(path+ ((param!=null)?(" "+param):""));
+			Process p = runTime.exec(path+ ((param!=null)?(" "+param):""));
 		} catch (IOException e) {
 			output.printOutput("Can't run the program. Reason:"+e.getMessage());
 			return false;

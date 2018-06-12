@@ -71,7 +71,7 @@ public class ClientCode {
 		//cmd3.execute();
 		
 		String param4 = "C:\\Users\\anurag\\Desktop\\dev\\eclipse\\eclipse.exe";
-		pHandler.runProgram(param4, null);
+		pHandler.run(param4, null);
 		
 	}
 	

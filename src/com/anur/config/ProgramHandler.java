@@ -18,7 +18,7 @@ public abstract class ProgramHandler {
     	return true;
 	}
 	
-	public abstract boolean runProgram(String path, String param);
+	protected abstract boolean runProgram(String path, String param);
 	
 	public boolean run(String path) {
 		if(validatePath(path) && runProgram(path, null))
